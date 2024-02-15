@@ -1,0 +1,15 @@
+<button onclick="openWindow()"> open </button>
+<button onclick="closeWindow()"> close </button>
+
+<script>
+	function openWindow() {
+	tab = window.open("http://cpj17.blogspot.com","CPJ_BLOG","height=500,width=500");
+	setTimeout(()=> {
+	tab.close();
+	},3000);
+	}
+	
+	function closeWindow() {
+	tab.close();
+	}
+</script>

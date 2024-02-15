@@ -1,0 +1,11 @@
+<script>
+document.addEventListener("visibilitychange", event => {
+  if (document.visibilityState == "visible") {
+    document.write("ok")
+  } else {
+    //do for what happen when the tab is inactive
+	window.location="ztest.html"
+  }
+})
+</script>
+<h1>hi</h1>

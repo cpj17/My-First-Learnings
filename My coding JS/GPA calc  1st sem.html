@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> GPA Calc R17 </title>
+
+<script type="text/javascript">
+function grade()
+{
+	var eng_grade=document.getElementById("eng_grade").value
+	var mat_grade=document.getElementById("mat_grade").value
+	var eg_grade=document.getElementById("eg_grade").value
+	var chy_grade=document.getElementById("chy_grade").value
+	var phy_grade=document.getElementById("phy_grade").value
+	var psp_grade=document.getElementById("psp_grade").value
+	var bslab_grade=document.getElementById("bslab_grade").value
+	var psplab_grade=document.getElementById("psplab_grade").value
+	
+	var eng=gp_calc(eng_grade)
+	var mat=gp_calc(mat_grade)
+	var chy=gp_calc(mat_grade)
+	var phy=gp_calc(phy_grade)
+	var psp=gp_calc(psp_grade)
+	var eg=gp_calc(eg_grade)
+	var psplab=gp_calc(psplab_grade)
+	var bslab=gp_calc(bslab_grade)
+	
+	var cdmat=4
+	var cdeng=4
+	var cdeg=4
+	var cdpsp=3
+	var cdchy=3
+	var cdphy=3
+	var cdbslab=2
+	var cdpsplab=2
+	
+	if(eng==0)
+		cdeng=0
+	if(mat==0)
+		cdmat=0
+	if(eg==0)
+		cdeg=0
+	if(phy==0)
+		cdphy=0
+	if(chy==0)
+		cdchy=0
+	if(psp==0)
+		cdpsp=0
+	if(bslab==0)
+		cdbslab=0
+	if(psplab==0)
+		cdpsplab=0
+	
+	var dr=cdeng*eng+cdmat*mat+cdeg*eg+cdphy*phy+cdchy*chy+cdpsp*psp+cdbslab*bslab+cdpsplab*psplab
+	nr=cdmat+cdeg+cdpsp+cdphy+cdchy+cdeng+cdbslab+cdpsplab
+	var gpa=dr/nr
+	document.write("<br>Your GPA is : "+gpa)
+}
+function gp_calc(gp)
+{
+	if(gp=="O")
+	  return 10
+	else if(gp=="A+")
+		return 9
+	else if(gp=="A")
+		return 8
+	else if(gp=="B+")
+		return 7
+	else if(gp=="B")
+		return 6
+	else
+		return 0
+}
+</script>
+
+</head>
+<body bgcolor="black">
+<h2><p align="center"><font color="red">GPA Calc R17</font></p></h2>
+<table border=2 align="center" cellspacing=4 cellpadding=4 bgcolor="red">
+	<tr>
+	  <td> English </td>
+	  <td>
+	  <select id="eng_grade">
+		<option>None</option>
+		<option>O</option>
+		<option>A+</option>
+		<option>A</option>
+		<option>B+</option>
+		<option>B</option>
+		<option>RA</option>
+	  </select>
+	</tr>
+	
+	<tr>
+	  <td> Maths </td>
+	  <td>
+	  <select id="mat_grade">
+		<option>None</option>
+		<option>O</option>
+		<option>A+</option>
+		<option>A</option>
+		<option>B+</option>
+		<option>B</option>
+		<option>RA</option>
+	  </select>
+	</tr>
+	
+	<tr>
+	  <td> Chemistry </td>
+	  <td>
+	  <select id="chy_grade">
+		<option>None</option>
+		<option>O</option>
+		<option>A+</option>
+		<option>A</option>
+		<option>B+</option>
+		<option>B</option>
+		<option>RA</option>
+	  </select>
+	</tr>
+	
+	<tr>
+	  <td> Physics </td>
+	  <td>
+	  <select id="phy_grade">
+		<option>None</option>
+		<option>O</option>
+		<option>A+</option>
+		<option>A</option>
+		<option>B+</option>
+		<option>B</option>
+		<option>RA</option>
+	  </select>
+	</tr>
+	
+	<tr>
+	  <td> Python </td>
+	  <td>
+	  <select id="psp_grade">
+		<option>None</option>
+		<option>O</option>
+		<option>A+</option>
+		<option>A</option>
+		<option>B+</option>
+		<option>B</option>
+		<option>RA</option>
+	  </select>
+	</tr>
+	
+	<tr>
+	  <td> EG </td>
+	  <td>
+	  <select id="eg_grade">
+		<option>None</option>
+		<option>O</option>
+		<option>A+</option>
+		<option>A</option>
+		<option>B+</option>
+		<option>B</option>
+		<option>RA</option>
+	  </select>
+	</tr>
+	
+	<tr>
+	  <td> BS Lab </td>
+	  <td>
+	  <select id="bslab_grade">
+		<option>None</option>
+		<option>O</option>
+		<option>A+</option>
+		<option>A</option>
+		<option>B+</option>
+		<option>B</option>
+		<option>RA</option>
+	  </select>
+	</tr>
+	
+	<tr>
+	  <td> PSPP Lab </td>
+	  <td>
+	  <select id="psplab_grade">
+		<option>None</option>
+		<option>O</option>
+		<option>A+</option>
+		<option>A</option>
+		<option>B+</option>
+		<option>B</option>
+		<option>RA</option>
+	  </select>
+	</tr>
+</table>
+<table align="center">
+	<tr align="center">
+	  <td> <input onclick=grade() type="submit" value="Calculate"> </td>
+	</tr>
+</table>
+</body>
+</html>

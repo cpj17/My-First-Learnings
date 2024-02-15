@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Display alert before closing page</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>  
+    <script>
+  $(document).ready(function(){
+    $(window).on('beforeunload',function (){
+      return '';
+    });
+  });
+  </script>
+</head>
+<body>
+  <form>
+    <h2>Sample FORM</h2>
+     Name: <input type="text"><br><br>
+     Class: <input type="text">
+  </form> 
+</body>
+</html>

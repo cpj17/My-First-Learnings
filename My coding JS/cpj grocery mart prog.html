@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test</title>
+<script type="text/javascript">
+function fun()
+{
+	var n=document.getElementById("n").value
+	document.write("<p align=center style=background-color:red><font size=25px color=lime>CPJ GROCERY MART </font></p>")
+	document.write("<div>")
+	for(i=1;i<=n;i++)
+	{
+		document.write("<input type=text placeholder=item_name>&nbsp;&nbsp;&nbsp;")
+		document.write("<input type=number placeholder=quantity><br><br>")
+	}
+	document.write("</div>")
+	document.write("<input type=submit onclick=fin()>")
+}
+function fin()
+{
+	document.write("<br><br><input type=text size=30 id=final>")
+	document.getElementById("final").value="Your order has been placed successfully"
+}
+</script>
+</head>
+<body>
+<p align="center" style="background-color:red">
+	<font size=12px color="lime">CPJ GROCERY MART </font>
+</p>
+<form onsubmit="fun()">
+<input type="text" placeholder="Enter Your name"><br><br>
+<input type="text" placeholder="Enter Your phone number"><br><br>
+<textarea rows="15" cols="45">Enter your address</textarea><br><br>
+<label>How iany items do you need?</label>
+<input type="text" id="n">
+<input type="submit">
+</body>
+</html>

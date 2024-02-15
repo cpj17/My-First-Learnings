@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test</title>
+<script type="text/javascript">
+function fun()
+{
+	txt=document.getElementById("txt").value
+	document.getElementById("ans").value=txt
+}
+</script>
+</head>
+<body>
+	<textarea cols="10" rows="10" id="txt"></textarea>
+	<input type="submit" value="submit" onclick="fun()">
+	<br>After submit<br>
+	<textarea cols="10" rows="10" id="ans"></textarea>
+</body>
+</html>

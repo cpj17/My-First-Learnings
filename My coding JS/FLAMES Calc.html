@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> FLAMES Calculator </title>
+<link type="text/css" rel="stylesheet" href="C:\Users\PRAVEEN JEEVA\Desktop\New folder\stylesheet.css">
+<script type="text/javascript">
+function calc()
+{
+	var n1=document.getElementById("name1").value
+	var n2=document.getElementById("name2").value
+	n1=n1.toLowerCase()
+	n2=n2.toLowerCase()
+	n1=remsp(n1)
+	n2=remsp(n2)
+
+	function remsp(str)
+	{
+		a=""
+		for(i=0;i<str.length;i++)
+		{
+			if(str.substr(i,1)!=" ")
+				a=a+str.substr(i,1)
+		}
+		return a
+	}
+
+	var count=0
+	for(i=0;i<n1.length;i++)
+	{	
+		for(j=0;j<n2.length;j++)
+		{
+			if(n1.substr(i,1)==n2.substr(j,1))
+			{
+				count=count+1
+				n2=n2.replace(n2.substr(j,1),"_")
+				n1=n1.replace(n1.substr(i,1),"_")
+				break
+			}
+			
+		}
+	}
+	count=n1.length+n2.length-(count*2)
+
+	if(count==3 || count==5 || count==14 || count==16 || count==18 || count==21 || count==23 || count==32 || count==34)
+		dis.result.value="Friend"
+	else if(count==10 || count==19 || count==36 || count==37 || count==39)
+		dis.result.value="Lovers"
+	else if(count==8 || count==12 || count==13 || count==17 || count==28 || count==30 || count==35)
+		dis.result.value="Affection"
+	else if(count==6 || count==11 || count==15 || count==26 || count==31 || count==33)
+		dis.result.value="Marriage"
+	else if(count==2 || count==4 || count==7 || count==9 || count==20 || count==22 || count==24 || count==25)
+		dis.result.value="Enemy"
+	else
+		dis.result.value="Sister"
+}
+</script>
+</head>
+<body>
+<p align="center"><font color="red"> FLAMES Calculator </font></p>
+<div>
+<form name="dis">
+<table align="center"cellspacing=4 border=2 bgcolor="pink">
+	<tr>
+		<td> <input type="text" required placeholder="Your Name" id="name1"> </td>
+	</tr>
+	<tr>
+		<td> <input type="text" required placeholder="Partner Name" id="name2"> </td>
+	</tr>
+</table>
+<center><input type="button" value="Calculate" onclick="calc()"> </center><br>
+<center>
+	<input type="test" name="result">
+	<br><br> Developed By CPJ
+</center>
+</form>
+</div>
+</body>
+</html>
